@@ -1,11 +1,11 @@
-var messageTemplate = document.querySelector('#message-template').content;
-var sendForm = document.querySelector('.chat-form');
-var inputField = sendForm.querySelector('.chat-form-input');
-var chat = document.querySelector('.chat-content');
+let messageTemplate = document.querySelector('#message-template').content;
+let sendForm = document.querySelector('.chat-form');
+let inputField = sendForm.querySelector('.chat-form-input');
+let chat = document.querySelector('.chat-content');
 
-var sendMessage = function (messageTemplate, inputField) {
-    var newMessage = messageTemplate.cloneNode(true)
-    var messageText = newMessage.querySelector('.chat-message-text');
+let sendMessage = function (messageTemplate, inputField) {
+    let newMessage = messageTemplate.cloneNode(true)
+    let messageText = newMessage.querySelector('.chat-message-text');
     messageText.textContent = inputField.value;
     inputField.value = '';
 
@@ -13,9 +13,9 @@ var sendMessage = function (messageTemplate, inputField) {
     chat.appendChild(newMessage);
 };
 
-var addDeleteHandler = function (message) {
-    var deleteButton = message.querySelector('.chat-message-button');
-    var chatMessage = message.querySelector('.chat-message');
+let addDeleteHandler = function (message) {
+    let deleteButton = message.querySelector('.chat-message-button');
+    let chatMessage = message.querySelector('.chat-message');
 
     deleteButton.addEventListener('click', function () {
         chatMessage.remove();
@@ -26,3 +26,5 @@ sendForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
     sendMessage(messageTemplate, inputField);
 });
+
+
